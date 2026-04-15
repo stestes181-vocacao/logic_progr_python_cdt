@@ -38,3 +38,4 @@ def ler_arquivo_jovens():
 # --- Execução ---
 sobrescrever_arquivo()
 ler_arquivo_jovens()
+
