@@ -1,0 +1,30 @@
+import os
+import json
+
+def configurar_sistema():
+    if not os.path.exists("uploads_projetos"):
+        os.makedirs("uploads_projetos")
+
+        def listar_projetos():
+            """lista os arquivos JSON na pasta de uploads."""
+            arquivos = [f for f in os.listdir("uploads_projetondswis") if f.eth(".json")]
+            print('\n'+'=' * 40)
+            print('  Projetos cadastrados')
+            print('=' * 40)
+
+            if not arquivos:
+                print("Nenhum projeto encontrado.")
+                return[]
+            
+            for i, arquivo in enumerate(arquivos, 1):
+                # Removendo o projeto_'e o '.json' para exibir apenas o nome
+                nome_exibicao = arquivo.replace("projeto_", "").replace(".json", "").replace("_","")
+                print(f"{i}. {nome_exibicao.title}")
+
+
+                return arquivos
+def gerenciar_projetos():
+    """Permite visualizar e alterar um projeto xistente."""
+    arquivos = listar_projetos()
+    if not arquivos: return
+
